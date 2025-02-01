@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .otp-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    #otp {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="otp-container">
+    <h2>OTP Generator</h2>
+    <div id="otp">Your OTP will appear here</div>
+    <button onclick="generateOTP()">Generate OTP</button>
+  </div>
+
+  <script>
+    function generateOTP() {
+      const otpLength = 6; // OTP length
+      let otp = '';
+      
+      // Generate a 6-digit OTP
+      for (let i = 0; i < otpLength; i++) {
+        otp += Math.floor(Math.random() * 10); // Generate random digits between 0-9
+      }
+
+      // Display the OTP in the 'otp' div
+      document.getElementById('otp').innerText = otp;
+    }
+  </script>
+
+</body>
+</html>
